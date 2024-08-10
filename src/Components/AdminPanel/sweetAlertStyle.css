@@ -1,0 +1,16 @@
+.custom-swal-container {
+    padding: 1rem !important;
+}
+
+.custom-swal-popup {
+    width: 400px !important;
+    max-width: 90% !important;
+}
+
+.custom-swal-title {
+    font-size: 1.2rem !important; /* تغییر اندازه عنوان */
+}
+
+.custom-swal-text {
+    font-size: 1rem !important; /* تغییر اندازه متن */
+}
