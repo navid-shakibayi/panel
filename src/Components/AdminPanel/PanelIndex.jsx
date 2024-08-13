@@ -48,7 +48,7 @@ const PanelIndex = ({ selectedCategory }) => {
 
     return (
         <>
-            <div className="">
+            <div>
                 {indexData && selectedCategory && (
                     <div className="my-6">
                         <h2
