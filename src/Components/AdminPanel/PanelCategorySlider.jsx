@@ -28,7 +28,7 @@ const PanelCategorySlider = ({ selectedCategory, onSelectCategory }) => {
             {categoryData && categoryData.map(item => (
                 <div
                     key={item.id}
-                    className={`cursor-pointer ${selectedCategory === item.attributes.name ? 'border-t-2 border-custom-color31 rounded-t-xl' : ''}`}
+                    className={`cursor-pointer ${selectedCategory === item.attributes.name ? 'border-t-2 border-custom-color31 rounded-t-xl transition duration-1000 ' : ''}`}
                     onClick={() => onSelectCategory(item.attributes.name)} // به‌روزرسانی دسته‌بندی انتخاب شده
                 >
                     <img

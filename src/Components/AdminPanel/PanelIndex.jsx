@@ -50,7 +50,7 @@ const PanelIndex = ({ selectedCategory }) => {
         <>
             <div className="">
                 {indexData && selectedCategory && (
-                    <div className="mb-6">
+                    <div className="my-6">
                         <h2
                             id={selectedCategory}
                             className="text-base text-center font-bold mb-2 rounded-t-[30px] pt-5 pb-3 border-t border-custom-color3 bg-gradient-to-b from-custom-color13 to-custom-color1"

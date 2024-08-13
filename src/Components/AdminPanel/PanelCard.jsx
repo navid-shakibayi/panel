@@ -11,7 +11,9 @@ const PanelCard = ({
     name,
     src,
     alt,
-    onDelete
+    onDelete,
+    isnew,
+    instock,
 }) => {
     const navigate = useNavigate();
 
@@ -61,8 +63,8 @@ const PanelCard = ({
     };
 
     return (
-        <div className="bg-custom-color12 w-full rounded-md flex justify-between items-center gap-4 p-2 shadow shadow-custom-color12">
-            <div className="flex gap-4 items-center">
+        <div className="bg-custom-color12 w-full rounded-md grid grid-cols-5 gap-4 p-2 shadow shadow-custom-color12">
+            <div className="flex gap-4 items-center col-span-2">
                 <img
                     src={src}
                     alt={alt}
@@ -71,8 +73,32 @@ const PanelCard = ({
                 <p className="text-base mt-1 font-kalame">{name}</p>
             </div>
 
-            <div className="flex gap-2">
-                <div onClick={handleEdit}>
+            <div className='flex items-center justify-center'>
+                {isnew && (
+                    <div className="flex items-center gap-1">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-500 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-600"></span>
+                        </span>
+                        <span className="text-[10px] sm:text-xs text-yellow-600 font-bold">جدید</span>
+                    </div>
+                )}
+            </div>
+
+            <div className='flex items-center justify-center'>
+                {instock && (
+                    <div className="flex items-center gap-1">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+                        </span>
+                        <span className="text-[10px] sm:text-xs text-red-600 font-bold">تمام شد</span>
+                    </div>
+                )}
+            </div>
+
+            <div className="flex items-center justify-end gap-2">
+                <div onClick={handleEdit} className='mt-1'>
                     <Edit />
                 </div>
                 <div onClick={handleDelete}>
