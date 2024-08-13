@@ -159,6 +159,7 @@ const EditItem = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+        navigate("/panel")
         const token = sessionStorage.getItem("jwt");
         if (!token) {
             Swal.fire("خطا!", "توکن موجود نیست. لطفا دوباره وارد شوید.", "error");
