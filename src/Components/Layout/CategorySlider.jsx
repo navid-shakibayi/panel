@@ -31,7 +31,7 @@ const CategorySlider = () => {
     if (error) return <p>Error: {error}</p>;
 
     return (
-        <div className="flex flex-col gap-2 h-lvh overflow-y-auto mt-3">
+        <div className="flex flex-col gap-2 h-lvh overflow-y-auto mt-3 border-8 border-custom-color12 bg-custom-color12 rounded-xl">
             {categoryData && categoryData.map(item => (
                 <div
                     key={item.id}
@@ -41,9 +41,9 @@ const CategorySlider = () => {
                     <img
                         src={`${apiUrl}${item.attributes.image.data.attributes.url}`}
                         alt={item.attributes.name}
-                        className="w-24 aspect-square bg-custom-color12 p-4 rounded-t-xl"
+                        className="w-24 aspect-square bg-custom-color1 p-4 rounded-t-xl"
                     />
-                    <p className="bg-custom-color3 text-xs p-0.5 w-full text-center text-nowrap font-kalame">{item.attributes.name}</p>
+                    <p className="bg-custom-color3 text-xs py-1 w-full text-center text-nowrap font-kalame rounded-b-lg">{item.attributes.name}</p>
                 </div>
             ))}
         </div>
