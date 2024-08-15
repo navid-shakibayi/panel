@@ -5,7 +5,7 @@ import Panel from './Components/AdminPanel/Panel';
 import CreateItem from './Components/AdminPanel/CreateItem';
 import ProtectedRoute from './Components/Authentication/ProtectedRoute';
 import EditItem from './Components/AdminPanel/EditItem';
-import NotFound from './Components/Shared/NotFound';
+import NotFound from './Components/NotFound/NotFound';
 
 const App = () => {
   return (
