@@ -5,6 +5,7 @@ import Panel from './Components/AdminPanel/Panel';
 import CreateItem from './Components/AdminPanel/CreateItem';
 import ProtectedRoute from './Components/Authentication/ProtectedRoute';
 import EditItem from './Components/AdminPanel/EditItem';
+import NotFound from './Components/Shared/NotFound';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/panel/create-new-item" element={<CreateItem />} />
           <Route path="/panel/edit-item/:id" element={<EditItem />} />
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
   );
