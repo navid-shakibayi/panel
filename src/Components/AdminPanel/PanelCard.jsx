@@ -43,7 +43,7 @@ const PanelCard = ({
                     throw new Error('No token found');
                 }
 
-                await axios.delete(`https://rad-cafe-api.chbk.run/api/items/${id}`, {
+                await axios.delete(`http://localhost:1337/api/items/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

@@ -22,7 +22,7 @@ const Login = () => {
         setIsLoading(true); // شروع لودینگ
 
         try {
-            const response = await axios.post('https://rad-cafe-api.chbk.run/api/auth/local', {
+            const response = await axios.post('http://localhost:1337/api/auth/local', {
                 identifier: username,
                 password: password,
             });

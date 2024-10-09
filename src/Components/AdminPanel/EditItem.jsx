@@ -33,7 +33,7 @@ const EditItem = () => {
         const fetchCategories = async () => {
             try {
                 const response = await axios.get(
-                    "https://rad-cafe-api.chbk.run/api/categories?populate=*",
+                    "http://localhost:1337/api/categories?populate=*",
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -50,7 +50,7 @@ const EditItem = () => {
         const fetchItem = async () => {
             try {
                 const response = await axios.get(
-                    `https://rad-cafe-api.chbk.run/api/items/${id}?populate=*`,
+                    `http://localhost:1337/api/items/${id}?populate=*`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -73,13 +73,13 @@ const EditItem = () => {
 
                 if (item?.attributes?.thumbnail?.data?.attributes?.url) {
                     setThumbnailPreview(
-                        `https://rad-cafe-api.chbk.run${item.attributes.thumbnail.data.attributes.url}`
+                        `http://localhost:1337${item.attributes.thumbnail.data.attributes.url}`
                     );
                 }
 
                 const galleryUrls =
                     item?.attributes?.gallery?.data?.map(
-                        (file) => `https://rad-cafe-api.chbk.run${file.attributes.url}`
+                        (file) => `http://localhost:1337${file.attributes.url}`
                     ) || [];
                 setGalleryPreviews(galleryUrls);
             } catch (error) {
@@ -179,7 +179,7 @@ const EditItem = () => {
                 });
 
                 const uploadResponse = await axios.post(
-                    "https://rad-cafe-api.chbk.run/api/upload",
+                    "http://localhost:1337/api/upload",
                     galleryFormData,
                     {
                         headers: {
@@ -206,7 +206,7 @@ const EditItem = () => {
             // حذف تصاویر از سرور
             for (const fileId of galleryToDelete) {
                 await axios.delete(
-                    `https://rad-cafe-api.chbk.run/api/upload/files/${fileId}`,
+                    `http://localhost:1337/api/upload/files/${fileId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -236,7 +236,7 @@ const EditItem = () => {
 
             // ارسال درخواست به‌روزرسانی محصول
             await axios.put(
-                `https://rad-cafe-api.chbk.run/api/items/${id}`,
+                `http://localhost:1337/api/items/${id}`,
                 formDataToSend,
                 {
                     headers: {

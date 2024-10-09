@@ -31,7 +31,7 @@ const EditItemDemo = () => {
 
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('https://rad-cafe-api.chbk.run/api/categories?populate=*', {
+                const response = await axios.get('http://localhost:1337/api/categories?populate=*', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -45,7 +45,7 @@ const EditItemDemo = () => {
 
         const fetchItem = async () => {
             try {
-                const response = await axios.get(`https://rad-cafe-api.chbk.run/api/items/${id}?populate=*`, {
+                const response = await axios.get(`http://localhost:1337/api/items/${id}?populate=*`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -63,10 +63,10 @@ const EditItemDemo = () => {
                 });
 
                 if (item?.attributes?.thumbnail?.data?.attributes?.url) {
-                    setThumbnailPreview(`https://rad-cafe-api.chbk.run${item.attributes.thumbnail.data.attributes.url}`);
+                    setThumbnailPreview(`http://localhost:1337${item.attributes.thumbnail.data.attributes.url}`);
                 }
 
-                const galleryUrls = item?.attributes?.gallery?.data?.map(file => `https://rad-cafe-api.chbk.run${file.attributes.url}`) || [];
+                const galleryUrls = item?.attributes?.gallery?.data?.map(file => `http://localhost:1337${file.attributes.url}`) || [];
                 setGalleryPreviews(galleryUrls);
             } catch (error) {
                 console.error('Error fetching item:', error);
@@ -134,7 +134,7 @@ const EditItemDemo = () => {
                 const thumbnailData = new FormData();
                 thumbnailData.append('files', formData.thumbnail);
 
-                const thumbnailResponse = await axios.post('https://rad-cafe-api.chbk.run/api/upload', thumbnailData, {
+                const thumbnailResponse = await axios.post('http://localhost:1337/api/upload', thumbnailData, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -149,7 +149,7 @@ const EditItemDemo = () => {
                     const galleryData = new FormData();
                     galleryFiles.forEach(file => galleryData.append('files', file));
 
-                    const galleryResponse = await axios.post('https://rad-cafe-api.chbk.run/api/upload', galleryData, {
+                    const galleryResponse = await axios.post('http://localhost:1337/api/upload', galleryData, {
                         headers: {
                             Authorization: `Bearer ${token}`
                         }
@@ -170,7 +170,7 @@ const EditItemDemo = () => {
                 gallery: galleryIds.length > 0 ? galleryIds : formData.gallery
             };
 
-            await axios.put(`https://rad-cafe-api.chbk.run/api/items/${id}`, { data: updatedItem }, {
+            await axios.put(`http://localhost:1337/api/items/${id}`, { data: updatedItem }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

@@ -9,7 +9,7 @@ const Popup = () => {
     const [showPopup, setShowPopup] = useState(true);
     const [exiting, setExiting] = useState(false);  // برای مدیریت انیمیشن خروج
 
-    const baseURL = 'https://rad-cafe-api.chbk.run';
+    const baseURL = 'http://localhost:1337';
 
     useEffect(() => {
         axios.get(`${baseURL}/api/popup?populate=*`)

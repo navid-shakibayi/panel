@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import PanelCard from "./PanelCard";
 
 const PanelIndex = ({ selectedCategory }) => {
-    const apiUrl = 'https://rad-cafe-api.chbk.run';
+    const apiUrl = 'http://localhost:1337';
 
     const [indexData, setIndexData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get("https://rad-cafe-api.chbk.run/api/items?populate=*")
+        axios.get("http://localhost:1337/api/items?populate=*")
             .then((response) => {
                 const data = response.data;
                 const categories = data.data.reduce((acc, item) => {

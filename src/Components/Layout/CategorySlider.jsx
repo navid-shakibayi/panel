@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 
 const CategorySlider = () => {
-    const apiUrl = 'https://rad-cafe-api.chbk.run';
+    const apiUrl = 'http://localhost:1337';
 
     const [categoryData, setCategoryData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://rad-cafe-api.chbk.run/api/categories?populate=*')
+        fetch('http://localhost:1337/api/categories?populate=*')
             .then(res => res.json())
             .then(data => {
                 setCategoryData(data.data);

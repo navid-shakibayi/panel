@@ -26,7 +26,7 @@ const CreateItem = () => {
         if (!token) {
             navigate('/login');
         } else {
-            axios.get('https://rad-cafe-api.chbk.run/api/categories?populate=*', {
+            axios.get('http://localhost:1337/api/categories?populate=*', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -99,7 +99,7 @@ const CreateItem = () => {
                 const thumbnailData = new FormData();
                 thumbnailData.append('files', formData.thumbnail);
 
-                const thumbnailResponse = await axios.post('https://rad-cafe-api.chbk.run/api/upload', thumbnailData, {
+                const thumbnailResponse = await axios.post('http://localhost:1337/api/upload', thumbnailData, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -112,7 +112,7 @@ const CreateItem = () => {
                 const galleryData = new FormData();
                 formData.gallery.forEach(file => galleryData.append('files', file));
 
-                const galleryResponse = await axios.post('https://rad-cafe-api.chbk.run/api/upload', galleryData, {
+                const galleryResponse = await axios.post('http://localhost:1337/api/upload', galleryData, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -132,7 +132,7 @@ const CreateItem = () => {
                 gallery: galleryIds
             };
 
-            await axios.post('https://rad-cafe-api.chbk.run/api/items', { data: newItem }, {
+            await axios.post('http://localhost:1337/api/items', { data: newItem }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
