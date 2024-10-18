@@ -57,6 +57,7 @@ const Login = () => {
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             required
+                            autoFocus
                             autoComplete="true"
                         />
                     </div>
