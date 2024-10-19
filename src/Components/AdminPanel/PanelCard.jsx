@@ -98,10 +98,16 @@ const PanelCard = ({
             </div>
 
             <div className="flex items-center justify-end gap-2">
-                <div onClick={handleEdit} className='mt-1'>
+                <div
+                    onClick={handleEdit}
+                    className='mt-1 cursor-pointer'
+                >
                     <Edit />
                 </div>
-                <div onClick={handleDelete}>
+                <div
+                    onClick={handleDelete}
+                    className='cursor-pointer'
+                >
                     <Delete />
                 </div>
             </div>
