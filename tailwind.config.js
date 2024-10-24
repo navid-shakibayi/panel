@@ -23,6 +23,9 @@ module.exports = {
           color5: '#DC3545',
         },
       },
+      animation: {
+        "spin-slow": 'spin 8s linear infinite'
+      }
     },
   },
   plugins: [],
