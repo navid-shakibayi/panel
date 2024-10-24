@@ -6,11 +6,13 @@ import CreateItem from './Components/AdminPanel/CreateItem';
 import ProtectedRoute from './Components/Authentication/ProtectedRoute';
 import EditItem from './Components/AdminPanel/EditItem';
 import NotFound from './Components/NotFound/NotFound';
+import Test from './Components/Test/Test';
 
 const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path='/test' element={<Test />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route element={<ProtectedRoute />}>
