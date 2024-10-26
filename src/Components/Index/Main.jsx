@@ -41,12 +41,14 @@ const Main = () => {
             {indexData &&
                 Object.keys(indexData).map((category) => (
                     <div key={category} className="mb-6">
-                        <h2
-                            id={category}
-                            className="text-base text-center font-bold mb-2 rounded-t-[30px] pt-5 pb-3 border-t border-custom-color3 bg-gradient-to-b from-custom-color13 to-custom-color1"
-                        >
-                            {category}
-                        </h2>
+                        <div className="relative h-12 flex justify-center items-center w-full overflow-hidden text-base text-center font-bold mb-2 rounded-t-[30px] pt-5 pb-3 border-t border-custom-color3 bg-gradient-to-b from-custom-color13 to-custom-color1 before:absolute before:bg-[conic-gradient(transparent,transparent,#FCF6BA)] before:h-2 before:w-full before:animate-spin-slow">
+                            <h2
+                                id={category}
+                                className="absolute top-[2px] left-[2px] right-[2px] text-base text-center font-bold mb-2 rounded-t-[30px] pt-5 pb-3 border-t border-none bg-gradient-to-b from-custom-color13 to-custom-color1"
+                            >
+                                {category}
+                            </h2>
+                        </div>
 
                         <div className="flex flex-col gap-2 mt-4">
                             {indexData[category].map((item) => (

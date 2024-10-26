@@ -23,9 +23,18 @@ module.exports = {
           color5: '#DC3545',
         },
       },
+
       animation: {
-        "spin-slow": 'spin 8s linear infinite'
-      }
+        "spin-slow": 'spin 8s linear infinite',
+        rotate: "rotate 10s linear infinite",
+      },
+
+      keyframes: {
+        rotate: {
+          "0%": { transform: "rotate(0deg) scale(10)" },
+          "100%": { transform: "rotate(-360deg) scale(10)" },
+        },
+      },
     },
   },
   plugins: [],
