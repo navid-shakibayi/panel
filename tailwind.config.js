@@ -27,12 +27,16 @@ module.exports = {
       animation: {
         "spin-slow": 'spin 8s linear infinite',
         rotate: "rotate 10s linear infinite",
+        'moving-dot': 'moving-dot 10s linear infinite 5s',
       },
 
       keyframes: {
-        rotate: {
-          "0%": { transform: "rotate(0deg) scale(10)" },
-          "100%": { transform: "rotate(-360deg) scale(10)" },
+        'moving-dot': {
+          '0%': { bottom: '0', right: '0' },
+          '20%': { bottom: '100%', right: '0', transform: 'translateY(100%)' },
+          '40%': { bottom: '100%', right: '100%', transform: 'translate(100%, 100%)' },
+          '60%': { bottom: '0', right: '100%', transform: 'translateX(100%)' },
+          '100%': { bottom: '0', right: '100%', transform: 'translateX(100%)' },
         },
       },
     },

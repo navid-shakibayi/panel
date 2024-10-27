@@ -4,6 +4,14 @@ const Test = ({
 
     return <>
 
+        <section className="mx-auto flex justify-center">
+            <div className="relative overflow-hidden w-full max-w-4xl h-64 bg-gray-600 flex items-center justify-center mt-6 border-4 border-transparent rounded-lg">
+                <p className="text-white text-xl">باکس با نقطه درخشان متحرک</p>
+                <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-yellow-400 rounded-full animate-moving-dot"></div>
+            </div>
+        </section>
+
+
         <div class="mx-auto flex w-full  items-center justify-center mt-6">
             <div class="relative flex w-full cursor-pointer items-center overflow-hidden rounded-xl border border-slate-800 p-[2px]">
 
@@ -22,7 +30,7 @@ const Test = ({
         <section className="mx-auto  mt-6">
             <div className="">
                 <h2
-                    className="relative flex justify-center items-center w-full overflow-hidden text-base text-center font-bold mb-2 rounded-t-[30px] pt-5 pb-3 border-t border-custom-color3 bg-gradient-to-b from-custom-color13 to-custom-color1 before:absolute before:bg-[conic-gradient(transparent,transparent,#FCF6BA)] before:h-2 before:w-full before:animate-spin-slow"
+                    className="relative flex justify-center items-center w-full overflow-hidden text-base text-center font-bold mb-2 rounded-t-[30px] pt-5 pb-3 border-t border-custom-color3 bg-gradient-to-b from-custom-color13 to-custom-color1 before:absolute before:bg-[conic-gradient(#FFCF40_20deg,transparent_120deg)] before:h-2 before:w-full before:animate-spin-slow"
                 >
                     <h2 className="absolute bg-gradient-to-b from-custom-color13 to-custom-color1 top-[2px] bottom-[2px] left-[2px] right-[2px] rounded-t-[30px] h-full">
                         نوشیدنی گرم
