@@ -7,12 +7,12 @@ module.exports = {
     extend: {
       colors: {
         custom: {
-          color1: '#171717',
+          color1: '#211d2c',
           color12: '#1e2024',
           color13: '#0d0d0d',
           color14: '#181a1f',
 
-          color2: '#F9F6EE',
+          color2: '#e94040',
           color21: '#9f9c98',
 
           color3: '#134D3F',
