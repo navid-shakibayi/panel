@@ -31,7 +31,7 @@ const CategorySlider = () => {
     if (error) return <p>Error: {error}</p>;
 
     return (
-        <div className="flex flex-col gap-2 h-lvh overflow-y-auto mt-3 border-8 border-custom-color12 bg-custom-color12 rounded-xl">
+        <div className="flex flex-col gap-2 h-lvh overflow-y-auto mt-3 border-8 border-custom-color12 bg-custom-color12 rounded-s-xl">
             {categoryData && categoryData.map(item => (
                 <div
                     key={item.id}

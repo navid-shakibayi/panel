@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from "./Components/Index/Home";
+import Home from './Components/Index/Home';
+import Menu from "./Components/Index/Menu";
 import Login from './Components/Authentication/Login';
 import Panel from './Components/AdminPanel/Panel';
 import CreateItem from './Components/AdminPanel/CreateItem';
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path='/test' element={<Test />} />
         <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
         <Route path="/login" element={<Login />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/panel" element={<Panel />} />

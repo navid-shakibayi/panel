@@ -7,7 +7,7 @@ const Test = ({
         <section className="mx-auto flex justify-center">
             <div className="relative overflow-hidden w-full max-w-4xl h-64 bg-gray-600 flex items-center justify-center mt-6 border-4 border-transparent rounded-lg">
                 <p className="text-white text-xl">باکس با نقطه درخشان متحرک</p>
-                <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-yellow-400 rounded-full animate-moving-dot"></div>
+                <div className="absolute bottom-0 right-0 w-2 h-4 bg-yellow-400 rounded-full animate-moving-dot"></div>
             </div>
         </section>
 
