@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-import CategorySlider from "./CategorySlider"
-import Popup from "../Popup/Popup"
-import Main from "./Main"
+import CategorySlider from "./CategorySlider";
+import Popup from "../Popup/Popup";
+import Main from "./Main";
 
-const Home = ({
-
-}) => {
-
+const Menu = () => {
     const [showPopup, setShowPopup] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(null); // State to store selected category
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -17,16 +15,24 @@ const Home = ({
         return () => clearTimeout(timer);
     }, []);
 
-    return <>
-        {showPopup && <Popup />}
-        <section className="grid grid-cols-4 gap-2 max-w-6xl mx-auto px-2">
+    const handleCategorySelect = (categoryName) => {
+        setSelectedCategory(categoryName); // Update the selected category
+    };
 
-            <CategorySlider />
+    return (
+        <>
+            {showPopup && <Popup />}
+            <section className="grid grid-cols-4 gap-2 max-w-6xl mx-auto">
+                {/* ارسال تابع handleCategorySelect به CategorySlider */}
+                <CategorySlider onCategorySelect={handleCategorySelect} />
+                {/* ارسال selectedCategory و setSelectedCategory به Main */}
+                <Main 
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory} 
+                />
+            </section>
+        </>
+    );
+};
 
-            <Main />
-
-        </section>
-    </>
-}
-
-export default Home
+export default Menu;

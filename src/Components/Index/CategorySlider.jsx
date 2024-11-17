@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const CategorySlider = () => {
+const CategorySlider = ({ onCategorySelect }) => {
     const apiUrl = 'http://localhost:1337';
 
     const [categoryData, setCategoryData] = useState(null);
@@ -20,30 +20,22 @@ const CategorySlider = () => {
             });
     }, []);
 
-    const handleScrollToCategory = (categoryName) => {
-        const element = document.getElementById(categoryName);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (
-        <div className="flex flex-col gap-2 h-lvh overflow-y-auto mt-3 border-8 border-custom-color12 bg-custom-color12 rounded-s-xl">
+        <div className="flex flex-col gap-2 h-lvh overflow-y-auto bg-custom-color2 ps-2">
             {categoryData && categoryData.map(item => (
                 <div
                     key={item.id}
-                    onClick={() => handleScrollToCategory(item.attributes.name)}
+                    onClick={() => onCategorySelect(item.attributes.name)} // Pass selected category
                     className="cursor-pointer"
                 >
                     <img
                         src={`${apiUrl}${item.attributes.image.data.attributes.url}`}
                         alt={item.attributes.name}
-                        className="w-24 aspect-square bg-custom-color1 p-4 rounded-t-xl"
+                        className="w-24 aspect-square p-4"
                     />
-                    <p className="bg-custom-color3 text-xs py-1 w-full text-center text-nowrap font-kalame rounded-b-lg">{item.attributes.name}</p>
                 </div>
             ))}
         </div>
