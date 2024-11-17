@@ -26,10 +26,10 @@ const Header = ({
     return <>
         {data && <>
             <div className="flex justify-between items-center max-w-6xl mx-auto px-2 py-6 bg-custom-color1 shadow-2xl">
-                <div>
+                <Link to='/'>
                     <h2 className="text-3xl font-medium">{data.attributes.businessName}</h2>
                     <h3 className="text-sm text-custom-color2">{data.attributes.businessSubtitle}</h3>
-                </div>
+                </Link>
 
                 <Link to='/' className="w-12 bg-custom-color2 p-1 rounded-2xl">
                     <Home />
