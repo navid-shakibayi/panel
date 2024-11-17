@@ -47,12 +47,11 @@ const Main = ({ selectedCategory, setSelectedCategory }) => {  // دریافت s
     const filteredItems = selectedCategory ? indexData[selectedCategory] : [];
 
     return (
-        <div className="col-span-3 h-screen overflow-y-auto mt-3 px-2 no-scrollbar">
+        <div className="col-span-3 h-screen overflow-y-auto px-2 no-scrollbar">
             {/* Display category name only once at the top */}
             {selectedCategory && (
-                <div className="relative h-12 flex justify-center items-center w-full overflow-hidden text-base text-center font-bold mb-2 rounded-t-md pt-5 pb-3 border-t border-custom-color3 bg-gradient-to-b from-custom-color13 to-custom-color1 absolute">
-                    <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-yellow-400 rounded-full animate-moving-dot"></div>
-                    <h2 className="absolute top-[2px] left-[2px] right-[2px] text-base text-center font-bold mb-2 rounded-t-md pt-5 pb-3 border-t border-none bg-gradient-to-b from-custom-color13 to-custom-color1">
+                <div className="flex justify-center items-center bg-custom-color2 rounded-b-[18px]">
+                    <h2 className="text-lg font-bold py-2">
                         {selectedCategory}
                     </h2>
                 </div>
