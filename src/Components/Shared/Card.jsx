@@ -26,8 +26,9 @@ const Card = ({
                     <p className="text-custom-color21 text-[10px] leading-tight mt-2">{description}</p>
                 </div>
 
-                <div className="flex gap-2">
-                    <p className="underline decoration-custom-color3 decoration-[3px] underline-offset-4">{price}</p>
+                <div className="flex justify-between gap-2">
+                    <p className="underline decoration-custom-color2 decoration-[3px] underline-offset-4">{price}</p>
+                    <button className="bg-custom-color2 w-6 h-6 rounded-md font-bold text-lg">+</button>
                 </div>
             </div>
             {instock && (
