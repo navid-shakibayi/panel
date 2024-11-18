@@ -9,13 +9,18 @@ const Card = ({
 }) => {
 
     return <>
-        <div className="relative bg-custom-color12 w-full rounded-md flex gap-2 p-2 shadow shadow-custom-color12">
-            <img
-                src={src}
-                alt={alt}
-                className="w-24 h-24 rounded"
-            />
-            <div className="flex flex-col justify-between">
+        <div className="relative bg-custom-color12 w-full rounded-2xl flex gap-2 p-2 shadow shadow-custom-color12">
+            <div className="relative flex-shrink-0">
+                <img
+                    src={src}
+                    alt={alt}
+                    className="w-24 h-24 rounded-xl"
+                />
+                {isnew && (
+                    <span className="absolute bg-custom-color2 px-3 left-1/2 -top-2 transform -translate-x-1/2 rounded-2xl text-xs whitespace-nowrap">آیتم جدید</span>
+                )}
+            </div>
+            <div className="flex flex-col w-full justify-between">
                 <div>
                     <p className="text-base mt-1 font-kalame">{name}</p>
                     <p className="text-custom-color21 text-[10px] leading-tight mt-2">{description}</p>
@@ -23,16 +28,6 @@ const Card = ({
 
                 <div className="flex gap-2">
                     <p className="underline decoration-custom-color3 decoration-[3px] underline-offset-4">{price}</p>
-
-                    {isnew && (
-                        <div className="flex items-center gap-2 ms-2">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-500 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-600"></span>
-                            </span>
-                            <span className="text-xs text-yellow-600 font-bold">جدید</span>
-                        </div>
-                    )}
                 </div>
             </div>
             {instock && (
