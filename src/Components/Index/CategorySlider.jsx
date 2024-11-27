@@ -15,7 +15,7 @@ const CategorySlider = ({ onCategorySelect }) => {
                 setCategoryData(data.data);
                 setLoading(false);
                 setError(null);
-                
+
                 // Set the first category as selected by default
                 if (data.data && data.data.length > 0) {
                     setSelectedCategory(data.data[0].attributes.name);
@@ -41,12 +41,16 @@ const CategorySlider = ({ onCategorySelect }) => {
                 <div
                     key={item.id}
                     onClick={() => handleCategoryClick(item.attributes.name)} // Handle click
-                    className={`flex justify-center cursor-pointer p-2 ${selectedCategory === item.attributes.name ? 'bg-custom-color1 rounded-s-[20px] shadow-xl' : ''}`} // Apply background color if selected
+                    className={`flex justify-center cursor-pointer p-2 transition-all duration-700 relative`}
                 >
+                    <div
+                        className={`absolute inset-0 bg-custom-color1 rounded-s-[20px] shadow-xl transition-all duration-700 transform ${selectedCategory === item.attributes.name ? 'translate-x-0' : '-translate-x-full'
+                            }`}
+                    ></div>
                     <img
                         src={`${apiUrl}${item.attributes.image.data.attributes.url}`}
                         alt={item.attributes.name}
-                        className="w-20 aspect-square p-4"
+                        className="w-20 aspect-square p-4 z-10"
                     />
                 </div>
             ))}

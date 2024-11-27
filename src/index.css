@@ -126,3 +126,7 @@ code {
 .popup-exit {
   animation: fadeOut 0.5s ease-out forwards;
 }
+
+.bg-z-index {
+  z-index: -1;
+}
