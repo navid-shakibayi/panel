@@ -22,10 +22,8 @@ const Menu = () => {
     return (
         <>
             {showPopup && <Popup />}
-            <section className="grid grid-cols-4 gap-2 max-w-6xl mx-auto">
-                {/* ارسال تابع handleCategorySelect به CategorySlider */}
+            <section className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-9 gap-2 max-w-6xl mx-auto">
                 <CategorySlider onCategorySelect={handleCategorySelect} />
-                {/* ارسال selectedCategory و setSelectedCategory به Main */}
                 <Main 
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory} 

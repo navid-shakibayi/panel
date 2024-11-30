@@ -46,8 +46,8 @@ const Main = ({ selectedCategory, setSelectedCategory }) => {  // دریافت s
     // Filter items based on the selected category
     const filteredItems = selectedCategory ? indexData[selectedCategory] : [];
 
-    return (
-        <div className="col-span-3 h-screen overflow-y-auto px-2 no-scrollbar">
+    return <>
+        <div className="col-span-3 sm:col-span-5 md:col-span-6 lg:col-span-8 h-screen overflow-y-auto px-2 no-scrollbar">
             {/* Display category name only once at the top */}
             {selectedCategory && (
                 <div className="flex justify-center items-center bg-custom-color2 rounded-b-[18px]">
@@ -59,27 +59,26 @@ const Main = ({ selectedCategory, setSelectedCategory }) => {  // دریافت s
 
             {/* Display items of the selected category */}
             {filteredItems && filteredItems.length > 0 ? (
-                filteredItems.map((item) => (
-                    <div key={item.id} className="mb-6">
-                        <div className="flex flex-col gap-2 mt-4">
-                            <div className="flex items-center gap-4">
-                                <Card
-                                    src={`${apiUrl}${item.attributes?.thumbnail?.data?.attributes?.url}`}
-                                    name={item.attributes?.name}
-                                    description={item.attributes?.description}
-                                    price={item.attributes?.price}
-                                    isnew={item.attributes?.new}
-                                    instock={!item.attributes?.instock}
-                                />
-                            </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    {filteredItems.map((item) => (
+                        <div key={item.id} className="mb-6">
+                            <Card
+                                src={`${apiUrl}${item.attributes?.thumbnail?.data?.attributes?.url}`}
+                                name={item.attributes?.name}
+                                description={item.attributes?.description}
+                                price={item.attributes?.price}
+                                isnew={item.attributes?.new}
+                                instock={!item.attributes?.instock}
+                            />
                         </div>
-                    </div>
-                ))
+                    ))}
+                </div>
             ) : (
                 <p>محصولی جهت نمایش وجود ندارد</p>
             )}
+
         </div>
-    );
+    </>
 };
 
 export default Main;
