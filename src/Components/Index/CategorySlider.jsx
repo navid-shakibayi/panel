@@ -50,7 +50,7 @@ const CategorySlider = ({ onCategorySelect }) => {
                     <img
                         src={`${apiUrl}${item.attributes.image.data.attributes.url}`}
                         alt={item.attributes.name}
-                        className="w-20 aspect-square p-4 z-10"
+                        className="w-10 aspect-square z-10"
                     />
                 </div>
             ))}
