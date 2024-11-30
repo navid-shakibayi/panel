@@ -50,8 +50,8 @@ const Main = ({ selectedCategory, setSelectedCategory }) => {  // دریافت s
         <div className="col-span-3 sm:col-span-5 md:col-span-6 lg:col-span-8 h-screen overflow-y-auto px-2 no-scrollbar">
             {/* Display category name only once at the top */}
             {selectedCategory && (
-                <div className="flex justify-center items-center bg-custom-color2 rounded-b-[18px]">
-                    <h2 className="text-lg font-bold py-2">
+                <div className="flex justify-center items-center bg-custom-color2 rounded-lg mb-8">
+                    <h2 className="text-lg text-[16px] md:text-lg xl:text-xl py-2">
                         {selectedCategory}
                     </h2>
                 </div>
@@ -59,9 +59,9 @@ const Main = ({ selectedCategory, setSelectedCategory }) => {  // دریافت s
 
             {/* Display items of the selected category */}
             {filteredItems && filteredItems.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mt-4">
                     {filteredItems.map((item) => (
-                        <div key={item.id} className="mb-6">
+                        <div key={item.id}>
                             <Card
                                 src={`${apiUrl}${item.attributes?.thumbnail?.data?.attributes?.url}`}
                                 name={item.attributes?.name}
