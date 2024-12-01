@@ -32,7 +32,7 @@ const Header = ({
                 </span>
                 <div className="col-span-3 sm:col-span-5 md:col-span-6 lg:col-span-8 flex justify-between items-center py-6 bg-custom-color1 shadow-2xl pe-2">
                     <Link to='/'>
-                        <h2 className="text-3xl font-medium">{data.attributes.businessName}</h2>
+                        <h2 className="text-3xl lg:text-6xl font-paradox">{data.attributes.businessName}</h2>
                         <h3 className="text-sm text-custom-color2">{data.attributes.businessSubtitle}</h3>
                     </Link>
 

@@ -18,6 +18,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'paradox';
+  src: url('./assets/fonts/PARADOXLINE-Regular.ttf') format('woff2'),
+    url('./assets/fonts/PARADOXLINE-Regular.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 * {
   padding: 0;
@@ -45,6 +53,10 @@ code {
 
 .font-kalame {
   font-family: "kalame";
+}
+
+.font-paradox {
+  font-family: "paradox";
 }
 
 /* loading */
