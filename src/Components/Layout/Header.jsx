@@ -30,13 +30,13 @@ const Header = ({
                     <div></div>
                     <div className="border-b-4 border-custom-color1"></div>
                 </span>
-                <div className="col-span-3 sm:col-span-5 md:col-span-6 lg:col-span-8 flex justify-between items-center py-6 bg-custom-color1 shadow-2xl pe-2">
+                <div className="col-span-3 sm:col-span-5 md:col-span-6 lg:col-span-8 flex justify-between items-center py-6 bg-custom-color1 shadow-2xl px-2">
                     <Link to='/'>
-                        <h2 className="text-3xl lg:text-6xl font-paradox">{data.attributes.businessName}</h2>
-                        <h3 className="text-sm text-custom-color2">{data.attributes.businessSubtitle}</h3>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-paradox md:mb-2">{data.attributes.businessName}</h2>
+                        <h3 className="text-xs sm:text-sm md:text-base xl:text-lg text-custom-color2">{data.attributes.businessSubtitle}</h3>
                     </Link>
 
-                    <Link to='/' className="w-12 bg-custom-color2 p-1 rounded-2xl">
+                    <Link to='/' className="w-10 sm:w-11 md:w-12 xl:w-14 bg-custom-color2 p-1 rounded-2xl">
                         <Home />
                     </Link>
                 </div>
