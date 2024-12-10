@@ -36,7 +36,7 @@ const CategorySlider = ({ onCategorySelect }) => {
     };
 
     return (
-        <div className="flex flex-col gap-2 h-lvh overflow-y-auto bg-custom-color2 ps-2 no-scrollbar pt-4">
+        <div className="flex flex-col gap-2 h-lvh overflow-y-auto bg-custom-color2 ps-2 no-scrollbar pt-4 overflow-x-hidden">
             {categoryData && categoryData.map(item => (
                 <div
                     key={item.id}
