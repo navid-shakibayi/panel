@@ -36,12 +36,12 @@ const CategorySlider = ({ onCategorySelect }) => {
     };
 
     return (
-        <div className="flex flex-col gap-2 h-lvh overflow-y-auto bg-custom-color2 ps-2 no-scrollbar pt-4 overflow-x-hidden">
+        <div className="pt-28 flex flex-col gap-2 h-lvh overflow-y-auto bg-custom-color2 ps-2 no-scrollbar pt-4 overflow-x-hidden">
             {categoryData && categoryData.map(item => (
                 <div
                     key={item.id}
                     onClick={() => handleCategoryClick(item.attributes.name)} // Handle click
-                    className={`flex justify-center cursor-pointer p-2 transition-all duration-700 relative`}
+                    className={`flex justify-center cursor-pointer p-2 transition-all duration-700 relative `}
                 >
                     <div
                         className={`absolute inset-0 bg-custom-color1 rounded-s-[20px] shadow-xl transition-all duration-700 transform ${selectedCategory === item.attributes.name ? 'translate-x-0' : '-translate-x-full'

@@ -25,7 +25,7 @@ const Header = ({
 
     return <>
         {data && <>
-            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-9 gap-2 max-w-6xl mx-auto">
+            <div className="absolute w-full left-1/2 -translate-x-1/2 z-20 grid grid-cols-4 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-9 gap-2 max-w-6xl mx-auto">
                 <span className="bg-custom-color2 grid grid-cols-2">
                     <div></div>
                     <div className="border-b-4 border-custom-color1"></div>

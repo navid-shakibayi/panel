@@ -47,7 +47,7 @@ const Main = ({ selectedCategory, setSelectedCategory }) => {  // دریافت s
     const filteredItems = selectedCategory ? indexData[selectedCategory] : [];
 
     return <>
-        <div className="col-span-3 sm:col-span-5 md:col-span-6 lg:col-span-8 h-screen overflow-y-auto px-2 no-scrollbar">
+        <div className="pt-28 col-span-3 sm:col-span-5 md:col-span-6 lg:col-span-8 h-screen overflow-y-auto px-2 no-scrollbar">
             {/* Display category name only once at the top */}
             {selectedCategory && (
                 <div className="flex justify-center items-center bg-custom-color2 rounded-lg mb-8">
